@@ -9,7 +9,7 @@ public class pica {
 
 		String Vards, garoza, piedevas = "Siers";
 		char garozasveids; 
-		int izmers, piedevuskaits = 0, piedevuskaits2 =0, piedevuskaits3 =0,piedevuskaits4;
+		int izmers, piedevuskaits = 0, piedevuskaits2 =0, piedevuskaits3 =0,piedevuskaits4,pd=0;
 		double cena = 0.0, Nodokli, kopa, visskopa;  
 		final double nodoklis = 0.08;
 		
@@ -88,8 +88,16 @@ public class pica {
 	piedevas = piedevas + " un ananasi";}
 	else{
 		piedevuskaits3 = 0;} 
+	
+	System.out.println("Vai velaties senes? (J-ja | N-ne)" );
+	pd = scan.nextLine().charAt(0);
+	if (pd == 'J' || pd == 'j' ){
+		pd = 1;
+	piedevas = piedevas + " un senes";}
+	else{
+		pd = 0;} 
 	scan.close();
-	piedevuskaits4 = piedevuskaits + piedevuskaits2 + piedevuskaits3;
+	piedevuskaits4 = piedevuskaits + piedevuskaits2 + piedevuskaits3+pd;
 
 
 	kopa =cena+piedevuskaits4 + piegadescena;
